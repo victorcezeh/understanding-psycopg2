@@ -13,6 +13,7 @@
 6. [Learning Path Demonstrated](#-learning-path-demonstrated)
 7. [Next Steps & Extensions](#-next-steps--extensions)
 8. [Contributing](#-contributing)
+9. [Shout-out](#-shout-out)
 
 
 # PostgreSQL & Python Mini Data Engineering Projects
@@ -174,5 +175,13 @@ PATH_TO_CSV=/path/to/your/data.csv
 
 This repository is intended as both a **learning resource** and a **launchpad** for production-level data workflows.
 Feel free to fork, extend, or adapt these patterns for your own projects.
+
+---
+
+---
+
+## 📣 Shout-out 
+
+Big shout-out to [Chad Mowbray](https://github.com/Chad-Mowbray) and [Code Platoon](https://www.codeplatoon.org/). 
 
 ---
