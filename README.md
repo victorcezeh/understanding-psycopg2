@@ -1,6 +1,6 @@
 ## 📑 Table of Contents
 
-1. [Project Overview](#postgresql--python-data-engineering-projects)
+1. [Project Overview](#postgresql--python-mini-data-engineering-projects)
 2. [Project Highlights](#-project-highlights)
    1. [Class Roster Database](#1-class-roster-database)
    2. [Real Estate Data Analysis](#2-real-estate-data-analysis)
@@ -15,7 +15,7 @@
 8. [Contributing](#-contributing)
 
 
-# PostgreSQL & Python Data Engineering Projects
+# PostgreSQL & Python Mini Data Engineering Projects
 
 A showcase of **end-to-end data workflows** using Python (`psycopg2`) and PostgreSQL. From foundational database operations to advanced CSV ingestion, transformation, and business intelligence queries.
 
