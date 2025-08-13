@@ -54,7 +54,7 @@ This repository contains **two learning-to-production style projects**:
 
 ---
 
-## 🛠️ Tech Stack
+## 🤖 Tech Stack
 
 * **Language**: Python 3.x
 * **Database**: PostgreSQL
