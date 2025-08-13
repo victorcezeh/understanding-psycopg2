@@ -1,8 +1,27 @@
+## 📑 Table of Contents
+
+1. [Project Overview](#postgresql--python-data-engineering-projects)
+2. [Project Highlights](#-project-highlights)
+   1. [Class Roster Database](#1-class-roster-database)
+   2. [Real Estate Data Analysis](#2-real-estate-data-analysis)
+3. [Tech Stack](#-tech-stack)
+4. [Repository Structure](#-repository-structure)
+5. [Getting Started](#-getting-started)
+   1. [Install Dependencies](#1-install-dependencies)
+   2. [Configure Environment Variables](#2-configure-environment-variables)
+   3. [Run a Project](#3-run-a-project)
+6. [Learning Path Demonstrated](#-learning-path-demonstrated)
+7. [Next Steps & Extensions](#-next-steps--extensions)
+8. [Contributing](#-contributing)
+
+
 # PostgreSQL & Python Data Engineering Projects
 
 A showcase of **end-to-end data workflows** using Python (`psycopg2`) and PostgreSQL. From foundational database operations to advanced CSV ingestion, transformation, and business intelligence queries.
 
 This repository contains **two learning-to-production style projects**:
+
+> **Note:** The CSV dataset used in this project is stored in the `data/` folder.
 
 1. **Class Roster Database** – [link-here](https://github.com/victorcezeh/understanding-psycopg2/tree/main/class-roster-database) A beginner-friendly system for storing and retrieving student data, demonstrating a clear progression from procedural scripts to object-oriented design and an interactive CLI.
 2. **Real Estate Data Analysis** – [link-here](https://github.com/victorcezeh/understanding-psycopg2/tree/main/real-estate-data-analysis) An advanced ETL pipeline for importing real estate data from CSV, handling complex data types, and running market analysis queries.

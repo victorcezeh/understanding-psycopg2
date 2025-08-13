@@ -26,6 +26,8 @@ Before running this project, ensure you have:
 - Required Python packages (see Installation section)
 - Database credentials configured in environment variables
 
+> **Note:** The CSV dataset used in this project is stored in the `data/` folder in the root directory.
+
 ## Installation
 
 1. **Install required packages:**
@@ -42,9 +44,6 @@ REAL_ESTATE_PASSWORD=your_password
 REAL_ESTATE_PORT=5432
 PATH_TO_CSV=/path/to/your/properties.csv
 ```
-
-3. **Prepare CSV data file with the following columns:**
-   - street, city, zip, state, beds, baths, sq__ft, type, sale_date, price, latitude, longitude
 
 ## Project Structure
 
@@ -114,7 +113,7 @@ python real_estate_import.py
 - **Result Processing**: Handling aggregate query results
 
 **Business Question Addressed**:
-*"Are single family homes and condos more expensive on average?"*
+*"Are single family homes or condos more expensive on average?"*
 
 **What it does**:
 - Connects to database using concise connection string format
@@ -139,25 +138,6 @@ GROUP BY property_type;
 ```bash
 python property_analysis.py
 ```
-
-## CSV Data Format
-
-The project expects a CSV file with the following column structure:
-
-| Column | Description | Example |
-|--------|-------------|---------|
-| street | Street address | "123 Main St" |
-| city | City name | "New York" |
-| zip | ZIP code | "10001" |
-| state | State abbreviation | "NY" |
-| beds | Number of bedrooms | "3" |
-| baths | Number of bathrooms | "2" |
-| sq__ft | Square footage | "1500" |
-| type | Property type | "Residential" |
-| sale_date | Sale date with timezone | "2023-06-15 EDT" |
-| price | Sale price | "450000" |
-| latitude | Geographic latitude | "40.7128" |
-| longitude | Geographic longitude | "-74.0060" |
 
 ## Data Processing Pipeline
 
