@@ -4,8 +4,8 @@ A showcase of **end-to-end data workflows** using Python (`psycopg2`) and Postgr
 
 This repository contains **two learning-to-production style projects**:
 
-1. **Class Roster Database** – A beginner-friendly system for storing and retrieving student data, demonstrating a clear progression from procedural scripts to object-oriented design and an interactive CLI.
-2. **Real Estate Data Analysis** – An advanced ETL pipeline for importing real estate data from CSV, handling complex data types, and running market analysis queries.
+1. **Class Roster Database** – [link-here](https://github.com/victorcezeh/understanding-psycopg2/tree/main/class-roster-database) A beginner-friendly system for storing and retrieving student data, demonstrating a clear progression from procedural scripts to object-oriented design and an interactive CLI.
+2. **Real Estate Data Analysis** – [link-here](https://github.com/victorcezeh/understanding-psycopg2/tree/main/real-estate-data-analysis) An advanced ETL pipeline for importing real estate data from CSV, handling complex data types, and running market analysis queries.
 
 ---
 
