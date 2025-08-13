@@ -1,6 +1,6 @@
 # PostgreSQL & Python Data Engineering Projects
 
-A showcase of **end-to-end data workflows** using Python (`psycopg2`) and PostgreSQL — from foundational database operations to advanced CSV ingestion, transformation, and business intelligence queries.
+A showcase of **end-to-end data workflows** using Python (`psycopg2`) and PostgreSQL. From foundational database operations to advanced CSV ingestion, transformation, and business intelligence queries.
 
 This repository contains **two learning-to-production style projects**:
 
