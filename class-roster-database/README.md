@@ -53,7 +53,7 @@ The project consists of three main components that demonstrate different approac
 **Key Concepts**:
 - Direct database connection management
 - Table creation with DDL operations
-- Parameterized INSERT queries for data safety
+- Parameterized INSERT query for data safety
 - Manual transaction management with commit/rollback
 - Proper resource cleanup with try/except/finally blocks
 
