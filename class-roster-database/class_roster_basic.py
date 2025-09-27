@@ -7,7 +7,8 @@ It creates a students table and populates it with sample student data.
 Features:
 - Environment variable configuration for database credentials
 - Table creation with automatic primary key
-- Parameterized INSERT queries for SQL injection prevention
+- Batch INSERT operations using executemany() for efficiency
+- Parameterized queries for SQL injection prevention
 - Proper error handling and resource cleanup
 
 Dependencies:
@@ -30,60 +31,60 @@ PASSWORD = os.getenv("CLASS_ROASTER_PASSWORD")  # Database password
 PORT = os.getenv("CLASS_ROASTER_PORT")  # Database port number
 
 try:
-    # Connect to an existing database
+    # Establish connection to PostgreSQL database using environment variables
     conn = psycopg2.connect(
         dbname=CLASS_ROASTER_DBNAME, user=USER, password=PASSWORD, port=PORT, host=HOST
     )
 
-    # Open a cursor to perform database operations
+    # Create cursor object to execute database commands
     cur = conn.cursor()
 
-    # Drop existing students table if it exists (clean slate approach)
+    # Drop existing students table if it exists (ensures clean slate)
     cur.execute("DROP TABLE IF EXISTS students")
 
-    # Create student table query
-    # Uses serial for auto-incrementing primary key, varchar for text fields
+    # Define table creation query
+    # Uses SERIAL for auto-incrementing primary key, VARCHAR for text columns
     student_table_creation_query = """
     CREATE TABLE IF NOT EXISTS students (id serial PRIMARY KEY, name varchar, favorite_food varchar);
     """
 
-    # Create INSERT INTO queries using parameterized placeholders (%s)
-    # Parameterized queries prevent SQL injection attacks
-    insert_query_1 = """
+    # Define parameterized INSERT query template
+    # Uses %s placeholders to prevent SQL injection attacks
+    insert_query = """
     INSERT INTO students (name, favorite_food) VALUES (%s, %s);
     """
-    insert_query_2 = """
-    INSERT INTO students (name, favorite_food) VALUES (%s, %s);
-    """
-    insert_query_3 = """
-    INSERT INTO students (name, favorite_food) VALUES (%s, %s);
-    """
-
-    # Execute a command to create a new table
+    
+    # Execute table creation command
     cur.execute(student_table_creation_query)
+    
+    # Sample student data as list of tuples
+    # Each tuple contains (name, favorite_food) for one student
+    students = [
+        ("Victor", "Chicken"),
+        ("Esan", "Rice"),
+        ("Pelumi", "Beans")
+    ]
 
-    # Execute commands to insert into student table
-    # Second parameter is a tuple containing the actual values to insert
-    cur.execute(insert_query_1, ("Victor", "Chicken"))
-    cur.execute(insert_query_2, ("Esan", "Rice"))
-    cur.execute(insert_query_3, ("Pelumi", "Beans"))
+    # Batch insert all student records using executemany()
+    # More efficient than individual execute() calls for multiple records
+    cur.executemany(insert_query, students)
 
-    # Make the changes to the database persistent
-    # Without commit(), changes are only temporary in the transaction
+    # Commit transaction to make changes permanent in database
+    # Without commit(), all changes remain in temporary transaction state
     conn.commit()
     print("Table created and data inserted successfully!")
 
 except psycopg2.Error as e:
-    # Handle PostgreSQL-specific errors (connection issues, SQL errors, etc.)
+    # Handle PostgreSQL-specific errors (connection, authentication, SQL syntax, etc.)
     print("Database Error:", e)
 
 except Exception as e:
-    # Handle any other unexpected errors
-    print("Unexpected Error", e)
+    # Catch any other unexpected errors not related to PostgreSQL
+    print("Unexpected Error:", e)
 
 finally:
-    # Close all connections with the database
-    # Ensures proper cleanup even if errors occur
+    # Ensure proper cleanup of database resources
+    # Close cursor and connection even if errors occurred
     if cur is not None:
         cur.close()
     if conn is not None:
